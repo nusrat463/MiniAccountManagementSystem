@@ -1,0 +1,82 @@
+﻿@page
+@model ChartOfAccountsModel
+@using Microsoft.AspNetCore.Html
+@using MiniAccountManagementSystem.Entity
+@{
+    ViewData["Title"] = "Chart of Accounts";
+}
+
+<h2>Chart of Accounts</h2>
+
+<h4>Add New Account</h4>
+<form method="post" asp-page-handler="Add">
+    <div class="form-group">
+        <label asp-for="AccountType">Account Name</label>
+        <input asp-for="AccountName" class="form-control mb-2" />
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="AccountType">Account Type</label>
+        <select asp-for="AccountType" class="form-control">
+            <option value="">-- Select Account Type --</option>
+            <option value="Asset">Asset</option>
+            <option value="Liability">Liability</option>
+            <option value="Equity">Equity</option>
+            <option value="Revenue">Revenue</option>
+            <option value="Expense">Expense</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Parent Account</label>
+        <select asp-for="ParentAccountID" asp-items="Model.ParentAccounts" class="form-control"></select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+<hr />
+
+<h4>Account Tree</h4>
+
+<ul>
+    @foreach (var acc in Model.Accounts.Where(a => a.ParentAccountID == null))
+    {
+        @RenderNode(acc, Model.Accounts)
+    }
+</ul>
+
+@functions {
+    private HtmlString RenderNode(Account account, List<Account> all)
+    {
+        var sb = new System.Text.StringBuilder();
+        sb.Append("<li>");
+        sb.Append($"<b>{account.AccountName}</b> ({account.AccountType}) ");
+
+        sb.Append($@"
+            <form method='post' asp-page-handler='Delete' asp-route-id='{account.AccountID}' style='display:inline'>
+                <button class='btn btn-sm btn-danger'>Delete</button>
+            </form>
+            <form method='post' asp-page-handler='Edit' style='display:inline'>
+                <input type='hidden' name='EditingId' value='{account.AccountID}' />
+                <input name='AccountName' value='{account.AccountName}' class='form-control-sm' />
+                <input name='AccountType' value='{account.AccountType}' class='form-control-sm' />
+                <button class='btn btn-sm btn-secondary'>Update</button>
+            </form>
+        ");
+
+        var children = all.Where(x => x.ParentAccountID == account.AccountID).ToList();
+        if (children.Any())
+        {
+            sb.Append("<ul>");
+            foreach (var child in children)
+            {
+                sb.Append(RenderNode(child, all).ToString());
+            }
+            sb.Append("</ul>");
+        }
+
+        sb.Append("</li>");
+        return new HtmlString(sb.ToString());
+    }
+}

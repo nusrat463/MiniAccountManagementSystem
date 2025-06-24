@@ -18,7 +18,7 @@ namespace MiniAccountManagementSystem.Pages.Admin
         public string SelectedRoleId { get; set; }
 
         [BindProperty]
-        public string SelectedModuleId { get; set; } // string because ID from GetIdNameList is string
+        public string SelectedModuleId { get; set; }
 
         public List<SelectListItem> Roles { get; set; }
         public List<SelectListItem> Modules { get; set; }
@@ -45,7 +45,7 @@ namespace MiniAccountManagementSystem.Pages.Admin
                 TempData["Message"] = "Access assigned successfully.";
             }
 
-            LoadDropdowns(); // Reload dropdowns to maintain UI
+            LoadDropdowns();
             return Page();
         }
     }
