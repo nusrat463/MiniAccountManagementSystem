@@ -9,6 +9,10 @@
 <h2>Chart of Accounts</h2>
 
 <h4>Add New Account</h4>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
 <form method="post" asp-page-handler="Add">
     <div class="form-group">
         <label asp-for="AccountType">Account Name</label>

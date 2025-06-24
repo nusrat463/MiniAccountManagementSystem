@@ -1,29 +1,50 @@
 ﻿@page
-@model MiniAccountManagementSystem.Pages.Admin.AssignAccessModel
+@model AssignAccessModel
 @{
-    ViewData["Title"] = "Assign Module Access";
+    ViewData["Title"] = "Assign Module Access Rights";
 }
 
-<h2>Assign Module Access</h2>
-
-@if (TempData["Message"] != null)
-{
-    <div class="alert alert-success">@TempData["Message"]</div>
-}
+<h2>@ViewData["Title"]</h2>
 
 <form method="post">
     <div class="form-group">
-        <label asp-for="SelectedRoleId">Select Role</label>
-        <select asp-for="SelectedRoleId" asp-items="Model.Roles" class="form-control"></select>
+        <label>Select Role:</label>
+        <select asp-for="SelectedRoleId" class="form-control">
+            <option value="">-- Select Role --</option>
+            @foreach (var role in Model.Roles)
+            {
+                <option value="@role.Id">@role.Name</option>
+            }
+        </select>
     </div>
 
-    <div class="form-group">
-        <label asp-for="SelectedModuleId">Select Module</label>
-        <select asp-for="SelectedModuleId" asp-items="Model.Modules" class="form-control"></select>
+    <div class="form-group mt-2">
+        <label>Select Module:</label>
+        <select asp-for="SelectedModuleName" class="form-control">
+            <option value="">-- Select Module --</option>
+            @foreach (var module in Model.ModuleList)
+            {
+                <option value="@module.Id">@module.Name</option>
+            }
+        </select>
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Assign Access</button>
+    <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" asp-for="CanView" />
+        <label class="form-check-label">Can View</label>
     </div>
-    
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" asp-for="CanEdit" />
+        <label class="form-check-label">Can Edit</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Save Access</button>
 </form>
+
+@if (ViewData["Message"] != null)
+{
+    <div class="alert alert-success mt-3">
+        @ViewData["Message"]
+    </div>
+}

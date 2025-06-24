@@ -38,19 +38,59 @@ namespace MiniAccountManagementSystem.Data
         }
 
 
-        public void AssignModuleAccess(string roleId, int moduleId)
-    {
-        using (SqlConnection conn = new SqlConnection(_connectionString))
-        using (SqlCommand cmd = new SqlCommand("sp_AssignModuleAccessRights", conn))
+        public void AssignUserRole(string userId, string roleId)
         {
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@RoleID", roleId);
-            cmd.Parameters.AddWithValue("@ModuleID", moduleId);
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
+            using (var conn = new SqlConnection(_connectionString))
+            using (var cmd = new SqlCommand("sp_AssignUserRole", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                cmd.Parameters.AddWithValue("@RoleId", roleId);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
-    }
+
+        public List<RoleModuleAccess> GetModuleAccess(string roleId)
+        {
+            var list = new List<RoleModuleAccess>();
+
+            using (var conn = new SqlConnection(_connectionString))
+            using (var cmd = new SqlCommand("sp_GetRoleModuleAccess", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RoleId", roleId);
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new RoleModuleAccess
+                        {
+                            ModuleName = reader["ModuleName"].ToString(),
+                            CanView = Convert.ToBoolean(reader["CanView"]),
+                            CanEdit = Convert.ToBoolean(reader["CanEdit"])
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
+        public void AssignModuleAccess(string roleId, string moduleName, bool canView, bool canEdit)
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            using (var cmd = new SqlCommand("sp_AssignModuleAccess", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RoleId", roleId);
+                cmd.Parameters.AddWithValue("@ModuleName", moduleName);
+                cmd.Parameters.AddWithValue("@CanView", canView);
+                cmd.Parameters.AddWithValue("@CanEdit", canEdit);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
 
 
         public void ManageChartOfAccount(string action, int? id, string name, int? parentId, string type)

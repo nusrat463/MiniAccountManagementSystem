@@ -1,52 +1,58 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using MiniAccountManagementSystem.Data;
+using MiniAccountManagementSystem.Entity;
+using System.Collections.Generic;
 
-namespace MiniAccountManagementSystem.Pages.Admin
+public class AssignAccessModel : PageModel
 {
-    public class AssignAccessModel : PageModel
+    private readonly DbHelper _dbHelper;
+
+    public AssignAccessModel(DbHelper dbHelper)
     {
-        private readonly DbHelper _dbHelper;
+        _dbHelper = dbHelper;
+    }
 
-        public AssignAccessModel(IConfiguration configuration)
+    [BindProperty]
+    public string SelectedRoleId { get; set; }
+
+    [BindProperty]
+    public string SelectedModuleName { get; set; }
+
+
+    [BindProperty]
+    public bool CanView { get; set; }
+
+    [BindProperty]
+    public bool CanEdit { get; set; }
+
+    public List<(string Id, string Name)> Roles { get; set; } = new();
+    public List<(string Id, string Name)> ModuleList { get; set; } = new();
+
+
+    public void OnGet()
+    {
+        LoadDropdowns();
+    }
+
+    public IActionResult OnPost()
+    {
+        LoadDropdowns();
+
+        if (!string.IsNullOrEmpty(SelectedRoleId) && !string.IsNullOrEmpty(SelectedModuleName))
         {
-            _dbHelper = new DbHelper(configuration);
+            _dbHelper.AssignModuleAccess(SelectedRoleId, SelectedModuleName, CanView, CanEdit);
+            ViewData["Message"] = "Access assigned successfully.";
         }
 
-        [BindProperty]
-        public string SelectedRoleId { get; set; }
+        return Page();
+    }
 
-        [BindProperty]
-        public string SelectedModuleId { get; set; }
 
-        public List<SelectListItem> Roles { get; set; }
-        public List<SelectListItem> Modules { get; set; }
-
-        public void OnGet()
-        {
-            LoadDropdowns();
-        }
-
-        private void LoadDropdowns()
-        {
-            Roles = _dbHelper.GetIdNameList("sp_GetRoles")
-                .Select(r => new SelectListItem { Value = r.Id, Text = r.Name }).ToList();
-
-            Modules = _dbHelper.GetIdNameList("sp_GetModules")
-                .Select(m => new SelectListItem { Value = m.Id, Text = m.Name }).ToList();
-        }
-
-        public IActionResult OnPost()
-        {
-            if (!string.IsNullOrEmpty(SelectedRoleId) && int.TryParse(SelectedModuleId, out int moduleId))
-            {
-                _dbHelper.AssignModuleAccess(SelectedRoleId, moduleId);
-                TempData["Message"] = "Access assigned successfully.";
-            }
-
-            LoadDropdowns();
-            return Page();
-        }
+    private void LoadDropdowns()
+    {
+        Roles = _dbHelper.GetIdNameList("sp_getRoles");
+        ModuleList = _dbHelper.GetIdNameList("sp_getModules");
     }
 }
+
