@@ -1,0 +1,39 @@
+﻿@using MiniAccountManagementSystem.Entity
+@model MiniAccountManagementSystem.Entity.Account
+@{
+    var allAccounts = ViewData["AllAccounts"] as List<Account>;
+}
+
+<li>
+    <b>@Model.AccountName</b> (@Model.AccountType)
+
+    <form method="post" asp-page-handler="Delete" asp-route-id="@Model.AccountID" style="display:inline">
+        <button class="btn btn-sm btn-danger">Delete</button>
+    </form>
+
+    <form method="post" asp-page-handler="Edit" style="display:inline">
+        <input type="hidden" name="EditingId" value="@Model.AccountID" />
+        <input name="AccountName" value="@Model.AccountName" class="form-control-sm" />
+        <input name="AccountType" value="@Model.AccountType" class="form-control-sm" />
+        <input name="ParentAccountID" value="@Model.ParentAccountID ?? 0" class="form-control-sm" />
+        <button class="btn btn-sm btn-secondary">Update</button>
+    </form>
+
+    @* Recursively render children *@
+    @{
+        var children = allAccounts.Where(a => a.ParentAccountID == Model.AccountID).ToList();
+    }
+
+    @if (children.Any())
+    {
+        <ul>
+            @foreach (var child in children)
+            {
+                @await Html.PartialAsync("_AccountNode", child, new ViewDataDictionary(ViewData)
+   {
+       ["AllAccounts"] = allAccounts
+   })
+            }
+        </ul>
+    }
+</li>

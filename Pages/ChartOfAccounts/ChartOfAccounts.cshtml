@@ -42,41 +42,10 @@
 <ul>
     @foreach (var acc in Model.Accounts.Where(a => a.ParentAccountID == null))
     {
-        @RenderNode(acc, Model.Accounts)
+        @await Html.PartialAsync("_AccountNode", acc, new ViewDataDictionary(ViewData)
+{
+    ["AllAccounts"] = Model.Accounts
+})
     }
 </ul>
 
-@functions {
-    private HtmlString RenderNode(Account account, List<Account> all)
-    {
-        var sb = new System.Text.StringBuilder();
-        sb.Append("<li>");
-        sb.Append($"<b>{account.AccountName}</b> ({account.AccountType}) ");
-
-        sb.Append($@"
-            <form method='post' asp-page-handler='Delete' asp-route-id='{account.AccountID}' style='display:inline'>
-                <button class='btn btn-sm btn-danger'>Delete</button>
-            </form>
-            <form method='post' asp-page-handler='Edit' style='display:inline'>
-                <input type='hidden' name='EditingId' value='{account.AccountID}' />
-                <input name='AccountName' value='{account.AccountName}' class='form-control-sm' />
-                <input name='AccountType' value='{account.AccountType}' class='form-control-sm' />
-                <button class='btn btn-sm btn-secondary'>Update</button>
-            </form>
-        ");
-
-        var children = all.Where(x => x.ParentAccountID == account.AccountID).ToList();
-        if (children.Any())
-        {
-            sb.Append("<ul>");
-            foreach (var child in children)
-            {
-                sb.Append(RenderNode(child, all).ToString());
-            }
-            sb.Append("</ul>");
-        }
-
-        sb.Append("</li>");
-        return new HtmlString(sb.ToString());
-    }
-}
