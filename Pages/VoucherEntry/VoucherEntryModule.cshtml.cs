@@ -32,7 +32,6 @@ namespace MiniAccountManagementSystem.Pages.VoucherEntry
             {
                 Entries = new List<VoucherEntries>
             {
-                new VoucherEntries(),
                 new VoucherEntries()
             }
             };
@@ -45,6 +44,7 @@ namespace MiniAccountManagementSystem.Pages.VoucherEntry
             try
             {
                 _db.SaveVoucher(Voucher);
+                TempData["Message"] = "Voucher entry success.";
             }
             catch (Exception ex)
             {

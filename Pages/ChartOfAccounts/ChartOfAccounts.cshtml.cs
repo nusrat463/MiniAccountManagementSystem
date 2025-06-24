@@ -48,18 +48,21 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
         public IActionResult OnPostAdd()
         {
             _db.ManageChartOfAccount("Insert", null, AccountName, ParentAccountID, AccountType);
+            TempData["Message"] = "Account created successfully.";
             return RedirectToPage();
         }
 
         public IActionResult OnPostEdit()
         {
             _db.ManageChartOfAccount("Update", EditingId, AccountName, ParentAccountID, AccountType);
+            TempData["Message"] = "Account updated successfully.";
             return RedirectToPage();
         }
 
         public IActionResult OnPostDelete(int id)
         {
             _db.ManageChartOfAccount("Delete", id, null, null, null);
+            TempData["Message"] = "Account deleted successfully.";
             return RedirectToPage();
         }
     }
