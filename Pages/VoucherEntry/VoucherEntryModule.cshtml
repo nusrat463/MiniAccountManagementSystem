@@ -1,7 +1,6 @@
 ﻿@page
-@model MiniAccountManagementSystem.Pages.VoucherEntry.VoucherEntryModel
-@{
-}
+@model MiniAccountManagementSystem.Pages.VoucherEntry.VoucherEntryModuleModel
+
 <form method="post">
     <label>Date:</label>
     <input type="date" asp-for="Voucher.VoucherDate" required />
@@ -23,14 +22,32 @@
                 <th>Account</th>
                 <th>Debit</th>
                 <th>Credit</th>
-                <th>Remove</th>
+                <th>Action</th>
             </tr>
         </thead>
-        <tbody id="entries">
-            <!-- dynamically added rows -->
+        <tbody>
+            @for (int i = 0; i < Model.Voucher.Entries.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <select asp-for="Voucher.Entries[@i].AccountId" asp-items="Model.AccountList">
+                            <option value="">Select Account</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input asp-for="Voucher.Entries[@i].Debit" type="number" step="0.01" />
+                    </td>
+                    <td>
+                        <input asp-for="Voucher.Entries[@i].Credit" type="number" step="0.01" />
+                    </td>
+                    <td>
+                        <button type="submit" name="removeIndex" value="@i">Remove</button>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 
-    <button type="button" onclick="addEntryRow()">Add Entry</button>
-    <button type="submit">Save Voucher</button>
+    <button type="submit" name="action" value="add">Add Entry</button>
+    <button type="submit" name="action" value="save">Save Voucher</button>
 </form>

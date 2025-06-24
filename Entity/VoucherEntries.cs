@@ -1,6 +1,6 @@
 ﻿namespace MiniAccountManagementSystem.Entity
 {
-    public class VoucherEntry
+    public class VoucherEntries
     {
         public int AccountId { get; set; }
         public decimal Debit { get; set; }
