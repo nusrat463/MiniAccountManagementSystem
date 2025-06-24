@@ -51,31 +51,35 @@ namespace MiniAccountManagementSystem.Data
             }
         }
 
-        public List<RoleModuleAccess> GetModuleAccess(string roleId)
+        public RoleModuleAccess GetModuleAccess(string RoleId, string moduleName)
         {
-            var list = new List<RoleModuleAccess>();
+            RoleModuleAccess access = null;
 
             using (var conn = new SqlConnection(_connectionString))
             using (var cmd = new SqlCommand("sp_GetRoleModuleAccess", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@RoleId", roleId);
+                cmd.Parameters.AddWithValue("@RoleId", RoleId);
+                cmd.Parameters.AddWithValue("@ModuleName", moduleName);
+
                 conn.Open();
                 using (var reader = cmd.ExecuteReader())
                 {
-                    while (reader.Read())
+                    if (reader.Read())
                     {
-                        list.Add(new RoleModuleAccess
+                        access = new RoleModuleAccess
                         {
                             ModuleName = reader["ModuleName"].ToString(),
                             CanView = Convert.ToBoolean(reader["CanView"]),
                             CanEdit = Convert.ToBoolean(reader["CanEdit"])
-                        });
+                        };
                     }
                 }
             }
-            return list;
+
+            return access;
         }
+
 
         public void AssignModuleAccess(string roleId, string moduleName, bool canView, bool canEdit)
         {

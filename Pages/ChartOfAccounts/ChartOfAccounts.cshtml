@@ -7,49 +7,61 @@
 }
 
 <h2>Chart of Accounts</h2>
-
-<h4>Add New Account</h4>
 @if (TempData["Message"] != null)
 {
     <div class="alert alert-success">@TempData["Message"]</div>
 }
-<form method="post" asp-page-handler="Add">
-    <div class="form-group">
-        <label asp-for="AccountType">Account Name</label>
-        <input asp-for="AccountName" class="form-control mb-2" />
-    </div>
-    
-    <div class="form-group">
-        <label asp-for="AccountType">Account Type</label>
-        <select asp-for="AccountType" class="form-control">
-            <option value="">-- Select Account Type --</option>
-            <option value="Asset">Asset</option>
-            <option value="Liability">Liability</option>
-            <option value="Equity">Equity</option>
-            <option value="Revenue">Revenue</option>
-            <option value="Expense">Expense</option>
-        </select>
-    </div>
 
-    <div class="form-group">
-        <label>Parent Account</label>
-        <select asp-for="ParentAccountID" asp-items="Model.ParentAccounts" class="form-control"></select>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Add</button>
-</form>
-
-<hr />
-
-<h4>Account Tree</h4>
-
-<ul>
-    @foreach (var acc in Model.Accounts.Where(a => a.ParentAccountID == null))
-    {
-        @await Html.PartialAsync("_AccountNode", acc, new ViewDataDictionary(ViewData)
+@if (Model.CanView)
 {
-    ["AllAccounts"] = Model.Accounts
-})
-    }
-</ul>
+    <!-- Display table or read-only data -->
+    <table class="table">
+        <thead><tr><th>Account</th><th>Type</th></tr></thead>
+        <tbody>
+            <h4>Account Tree</h4>
 
+            <ul>
+                @foreach (var acc in Model.Accounts.Where(a => a.ParentAccountID == null))
+                {
+                    @await Html.PartialAsync("_AccountNode", acc, new ViewDataDictionary(ViewData)
+       {
+           ["AllAccounts"] = Model.Accounts
+       })
+                }
+        </tbody>
+    </table>
+
+    @if (Model.CanEdit)
+    {
+        <a class="btn btn-primary" href="/ChartOfAccounts/Add">Add New Account</a>
+        <form method="post" asp-page-handler="Add">
+            <div class="form-group">
+                <label asp-for="AccountType">Account Name</label>
+                <input asp-for="AccountName" class="form-control mb-2" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AccountType">Account Type</label>
+                <select asp-for="AccountType" class="form-control">
+                    <option value="">-- Select Account Type --</option>
+                    <option value="Asset">Asset</option>
+                    <option value="Liability">Liability</option>
+                    <option value="Equity">Equity</option>
+                    <option value="Revenue">Revenue</option>
+                    <option value="Expense">Expense</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Parent Account</label>
+                <select asp-for="ParentAccountID" asp-items="Model.ParentAccounts" class="form-control"></select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    }
+}
+else
+{
+    <p>You do not have permission to view this page.</p>
+}

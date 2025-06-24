@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,11 +12,18 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
 {
     public class ChartOfAccountsModel : PageModel
     {
-        private readonly DbHelper _db;
+        private readonly DbHelper _dbHelper;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public ChartOfAccountsModel(IConfiguration config)
+        public bool CanView { get; private set; }
+        public bool CanEdit { get; private set; }
+
+        public ChartOfAccountsModel(DbHelper dbHelper, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            _db = new DbHelper(config);
+            _dbHelper = dbHelper;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public List<Account> Accounts { get; set; }
@@ -26,15 +34,43 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
         public List<SelectListItem> ParentAccounts { get; set; }
         [BindProperty] public string AccountType { get; set; }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
-            Accounts = _db.GetChartOfAccounts();
-            LoadDropdowns();
+            var user = await _userManager.GetUserAsync(User);
+            var roleName = (await _userManager.GetRolesAsync(user)).FirstOrDefault();
+
+            if (roleName == null)
+            {
+                return Forbid(); 
+            }
+
+            var role = await _roleManager.FindByNameAsync(roleName);
+            if (role == null)
+            {
+                return NotFound("Role not found");
+            }
+
+            var roleId = role.Id;
+
+            var access = _dbHelper.GetModuleAccess(roleId, "Chart of Accounts"); // Implement this method
+
+            if (access == null || !access.CanView)
+            {
+                return Forbid(); // Or redirect to an error page
+            }
+
+            CanView = access.CanView;
+            CanEdit = access.CanEdit;
+
+            // Load page data here if allowed
+            return Page();
         }
 
         private void LoadDropdowns()
         {
-            ParentAccounts = _db.GetIdNameList("sp_GetParentAccount")
+            Accounts = _dbHelper.GetChartOfAccounts();
+            LoadDropdowns();
+            ParentAccounts = _dbHelper.GetIdNameList("sp_GetParentAccount")
                 .Select(r => new SelectListItem { Value = r.Id, Text = r.Name }).ToList();
 
             ParentAccounts.Insert(0, new SelectListItem
@@ -47,21 +83,21 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
 
         public IActionResult OnPostAdd()
         {
-            _db.ManageChartOfAccount("Insert", null, AccountName, ParentAccountID, AccountType);
+            _dbHelper.ManageChartOfAccount("Insert", null, AccountName, ParentAccountID, AccountType);
             TempData["Message"] = "Account created successfully.";
             return RedirectToPage();
         }
 
         public IActionResult OnPostEdit()
         {
-            _db.ManageChartOfAccount("Update", EditingId, AccountName, ParentAccountID, AccountType);
+            _dbHelper.ManageChartOfAccount("Update", EditingId, AccountName, ParentAccountID, AccountType);
             TempData["Message"] = "Account updated successfully.";
             return RedirectToPage();
         }
 
         public IActionResult OnPostDelete(int id)
         {
-            _db.ManageChartOfAccount("Delete", id, null, null, null);
+            _dbHelper.ManageChartOfAccount("Delete", id, null, null, null);
             TempData["Message"] = "Account deleted successfully.";
             return RedirectToPage();
         }
