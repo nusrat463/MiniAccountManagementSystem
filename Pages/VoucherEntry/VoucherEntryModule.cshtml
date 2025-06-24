@@ -1,0 +1,36 @@
+﻿@page
+@model MiniAccountManagementSystem.Pages.VoucherEntry.VoucherEntryModel
+@{
+}
+<form method="post">
+    <label>Date:</label>
+    <input type="date" asp-for="Voucher.VoucherDate" required />
+
+    <label>Reference No:</label>
+    <input asp-for="Voucher.ReferenceNo" />
+
+    <label>Voucher Type:</label>
+    <select asp-for="Voucher.VoucherType" required>
+        <option value="">Select</option>
+        <option value="Journal">Journal</option>
+        <option value="Payment">Payment</option>
+        <option value="Receipt">Receipt</option>
+    </select>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Account</th>
+                <th>Debit</th>
+                <th>Credit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="entries">
+            <!-- dynamically added rows -->
+        </tbody>
+    </table>
+
+    <button type="button" onclick="addEntryRow()">Add Entry</button>
+    <button type="submit">Save Voucher</button>
+</form>
