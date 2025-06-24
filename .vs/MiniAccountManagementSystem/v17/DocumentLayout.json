@@ -11,20 +11,12 @@
       "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\voucherentry\\voucherentrymodule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\chartofaccounts\\chartofaccounts.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\chartofaccounts\\chartofaccounts.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\entity\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:entity\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\chartofaccounts\\chartofaccounts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\chartofaccounts\\chartofaccounts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\assignaccess.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\assignaccess.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\assignaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\assignaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\entity\\voucherentries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:entity\\voucherentries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\data\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,13 +74,38 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Voucher.cs",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Entity\\Voucher.cs",
+              "RelativeDocumentMoniker": "Entity\\Voucher.cs",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Entity\\Voucher.cs",
+              "RelativeToolTip": "Entity\\Voucher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T17:53:21.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VoucherEntries.cs",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Entity\\VoucherEntries.cs",
+              "RelativeDocumentMoniker": "Entity\\VoucherEntries.cs",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Entity\\VoucherEntries.cs",
+              "RelativeToolTip": "Entity\\VoucherEntries.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T17:55:42.942Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "VoucherEntryModule.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\VoucherEntry\\VoucherEntryModule.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\VoucherEntry\\VoucherEntryModule.cshtml.cs",
               "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\VoucherEntry\\VoucherEntryModule.cshtml.cs",
               "RelativeToolTip": "Pages\\VoucherEntry\\VoucherEntryModule.cshtml.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAcwBQAAAAAAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAEwDQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-24T14:18:58.612Z",
               "EditorCaption": ""
@@ -101,72 +118,20 @@
               "RelativeDocumentMoniker": "Pages\\VoucherEntry\\VoucherEntryModule.cshtml",
               "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\VoucherEntry\\VoucherEntryModule.cshtml",
               "RelativeToolTip": "Pages\\VoucherEntry\\VoucherEntryModule.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACAAAABkAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAB0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-24T14:14:33.458Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChartOfAccounts.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml.cs",
-              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml.cs",
-              "RelativeToolTip": "Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAcwBIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T12:03:57.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChartOfAccounts.cshtml",
-              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml",
-              "RelativeDocumentMoniker": "Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml",
-              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml",
-              "RelativeToolTip": "Pages\\ChartOfAccounts\\ChartOfAccounts.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-24T12:03:40.335Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AssignAccess.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Admin\\AssignAccess.cshtml.cs",
-              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml.cs",
-              "RelativeToolTip": "Pages\\Admin\\AssignAccess.cshtml.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T11:34:03.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AssignAccess.cshtml",
-              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Admin\\AssignAccess.cshtml",
-              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml",
-              "RelativeToolTip": "Pages\\Admin\\AssignAccess.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-24T11:33:14.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "DbHelper.cs",
               "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Data\\DbHelper.cs",
               "RelativeDocumentMoniker": "Data\\DbHelper.cs",
               "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Data\\DbHelper.cs",
               "RelativeToolTip": "Data\\DbHelper.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAQwBEAAAA2AAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAEwGkAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-24T11:32:03.405Z",
               "EditorCaption": ""

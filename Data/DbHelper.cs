@@ -96,5 +96,30 @@ namespace MiniAccountManagementSystem.Data
 
             return list;
         }
+
+        public void SaveVoucher(Voucher voucher)
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                foreach (var entry in voucher.Entries)
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_SaveVoucher", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@VoucherType", voucher.VoucherType);
+                        cmd.Parameters.AddWithValue("@VoucherDate", voucher.VoucherDate);
+                        cmd.Parameters.AddWithValue("@ReferenceNo", voucher.ReferenceNo ?? string.Empty);
+                        cmd.Parameters.AddWithValue("@AccountId", entry.AccountId);
+                        cmd.Parameters.AddWithValue("@Debit", entry.Debit);
+                        cmd.Parameters.AddWithValue("@Credit", entry.Credit);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
     }
 }

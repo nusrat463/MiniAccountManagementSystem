@@ -1,9 +1,10 @@
 ﻿@page
-@model MiniAccountManagementSystem.Pages.VoucherEntry.VoucherEntryModuleModel
+@model VoucherEntryModuleModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <form method="post">
     <label>Date:</label>
-    <input type="date" asp-for="Voucher.VoucherDate" required />
+    <input asp-for="Voucher.VoucherDate" type="date" required />
 
     <label>Reference No:</label>
     <input asp-for="Voucher.ReferenceNo" />
@@ -16,7 +17,7 @@
         <option value="Receipt">Receipt</option>
     </select>
 
-    <table>
+    <table id="entriesTable">
         <thead>
             <tr>
                 <th>Account</th>
@@ -45,9 +46,51 @@
                     </td>
                 </tr>
             }
+
         </tbody>
     </table>
 
-    <button type="submit" name="action" value="add">Add Entry</button>
-    <button type="submit" name="action" value="save">Save Voucher</button>
+    <button type="button" onclick="addRow()">Add Entry</button>
+    <button type="submit">Submit</button>
 </form>
+
+@section Scripts {
+    <script>
+        function addRow() {
+            var accounts = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.AccountList));
+            const table = document.getElementById('entriesTable').getElementsByTagName('tbody')[0];
+            const rowCount = table.rows.length;
+            const newRow = table.insertRow();
+
+            let options = '';
+            accounts.forEach(function (account) {
+                const selected = account.Value === "" ? 'selected' : '';
+                options += `<option value="${account.Value}" ${selected}>${account.Text}</option>`;
+            });
+
+            newRow.innerHTML = `
+                    <td><select name="Voucher.Entries[${rowCount}].AccountId">${options}</select></td>
+                    <td><input type="number" step="0.01" name="Voucher.Entries[${rowCount}].Debit" /></td>
+                    <td><input type="number" step="0.01" name="Voucher.Entries[${rowCount}].Credit" /></td>
+                    <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+                `;
+        }
+
+
+        function removeRow(button) {
+            const row = button.closest('tr');
+            row.remove();
+
+            // Re-index rows after removal
+            const rows = document.querySelectorAll('#entriesTable tbody tr');
+            rows.forEach((r, i) => {
+                r.querySelectorAll('select, input').forEach(input => {
+                    const name = input.name;
+                    const parts = name.split('.');
+                    parts[1] = `Entries[${i}]`;
+                    input.name = parts.join('.');
+                });
+            });
+        }
+    </script>
+}
