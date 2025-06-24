@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\assignaccess.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\assignaccess.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\assignaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\assignaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\data\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:data\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,6 +67,58 @@
             {
               "$type": "Bookmark",
               "Name": "ST:2:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAACOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-24T11:48:10.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssignAccess.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Admin\\AssignAccess.cshtml.cs",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml.cs",
+              "RelativeToolTip": "Pages\\Admin\\AssignAccess.cshtml.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAwwDEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T11:34:03.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AssignAccess.cshtml",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Admin\\AssignAccess.cshtml",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\AssignAccess.cshtml",
+              "RelativeToolTip": "Pages\\Admin\\AssignAccess.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-24T11:33:14.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DbHelper.cs",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Data\\DbHelper.cs",
+              "RelativeDocumentMoniker": "Data\\DbHelper.cs",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Data\\DbHelper.cs",
+              "RelativeToolTip": "Data\\DbHelper.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAswCQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T11:32:03.405Z",
+              "EditorCaption": ""
             }
           ]
         }
