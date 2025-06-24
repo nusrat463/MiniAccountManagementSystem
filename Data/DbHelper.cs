@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using MiniAccountManagementSystem.Entity;
 using System.Data;
 
 namespace MiniAccountManagementSystem.Data
@@ -50,5 +51,50 @@ namespace MiniAccountManagementSystem.Data
             cmd.ExecuteNonQuery();
         }
     }
-}
+
+
+        public void ManageChartOfAccount(string action, int? id, string name, int? parentId, string type)
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            using (var cmd = new SqlCommand("sp_ManageChartOfAccounts", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Action", action);
+                cmd.Parameters.AddWithValue("@AccountID", (object)id ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@AccountName", (object)name ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@ParentAccountID", (object)parentId ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@AccountType", (object)type ?? DBNull.Value);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public List<Account> GetChartOfAccounts()
+        {
+            var list = new List<Account>();
+
+            using (var conn = new SqlConnection(_connectionString))
+            using (var cmd = new SqlCommand("sp_GetChartOfAccounts", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new Account
+                        {
+                            AccountID = reader.GetInt32(0),
+                            AccountName = reader.GetString(1),
+                            ParentAccountID = reader.IsDBNull(2) ? null : reader.GetInt32(2),
+                            AccountType = reader.IsDBNull(3) ? null : reader.GetString(3)
+                        });
+                    }
+                }
+            }
+
+            return list;
+        }
+    }
 }
