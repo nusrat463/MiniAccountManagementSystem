@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\roles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\roles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\roles.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\roles.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\users.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\users.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|c:\\users\\nusrat.mim\\source\\repos\\miniaccountmanagementsystem\\pages\\accountant\\chartofaccounts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{00F807C0-76F4-4014-9B2B-E840E18C0CC3}|MiniAccountManagementSystem.csproj|solutionrelative:pages\\accountant\\chartofaccounts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,7 +90,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Roles.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Roles.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Admin\\Roles.cshtml.cs",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Roles.cshtml.cs*",
+              "RelativeToolTip": "Pages\\Admin\\Roles.cshtml.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T04:54:49.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Roles.cshtml",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Roles.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Admin\\Roles.cshtml",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Roles.cshtml",
+              "RelativeToolTip": "Pages\\Admin\\Roles.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T04:54:18.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Users.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Users.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Admin\\Users.cshtml.cs",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Users.cshtml.cs",
+              "RelativeToolTip": "Pages\\Admin\\Users.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T04:46:18.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Admin\\Users.cshtml",
+              "ToolTip": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Admin\\Users.cshtml",
+              "RelativeToolTip": "Pages\\Admin\\Users.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T04:45:49.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "_AccountNode.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Accountant\\_AccountNode.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Accountant\\_AccountNode.cshtml.cs",
@@ -87,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "_AccountNode.cshtml",
               "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Accountant\\_AccountNode.cshtml",
               "RelativeDocumentMoniker": "Pages\\Accountant\\_AccountNode.cshtml",
@@ -100,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ChartOfAccounts.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Accountant\\ChartOfAccounts.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Accountant\\ChartOfAccounts.cshtml.cs",
@@ -113,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ChartOfAccounts.cshtml",
               "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Pages\\Accountant\\ChartOfAccounts.cshtml",
               "RelativeDocumentMoniker": "Pages\\Accountant\\ChartOfAccounts.cshtml",
@@ -126,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "DbHelper.cs",
               "DocumentMoniker": "C:\\Users\\nusrat.mim\\source\\repos\\MiniAccountManagementSystem\\Data\\DbHelper.cs",
               "RelativeDocumentMoniker": "Data\\DbHelper.cs",

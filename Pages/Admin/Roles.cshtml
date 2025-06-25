@@ -1,0 +1,39 @@
+﻿@page
+@model RolesModel
+@using Microsoft.AspNetCore.Identity
+@{
+    ViewData["Title"] = "Role Management";
+}
+
+<h2>Role Management</h2>
+
+<div class="mb-3">
+    <form method="post" asp-page-handler="CreateRole" class="form-inline">
+        <label class="form-label me-2">New Role:</label>
+        <input type="text" name="NewRoleName" class="form-control me-2" required />
+        <button type="submit" class="btn btn-primary">Add Role</button>
+    </form>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Role Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model.Roles)
+        {
+            <tr>
+                <td>@role.Name</td>
+                <td>
+                    <form method="post" asp-page-handler="DeleteRole">
+                        <input type="hidden" name="RoleId" value="@role.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
