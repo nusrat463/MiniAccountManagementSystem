@@ -45,13 +45,17 @@ A simple accounting system built using ASP.NET Core Razor Pages with role-based 
 
 ![image alt](https://github.com/nusrat463/MiniAccountManagementSystem/blob/b116597fd286c39c230af5a5bf048d80ca493605/5.PNG)
 
-5.Admin can only view Charts of Accounts tree, can not add account.
+5.Admin can only view Charts of Accounts tree, dont have permission to edit anything.
 
-![image alt](https://github.com/nusrat463/MiniAccountManagementSystem/blob/b116597fd286c39c230af5a5bf048d80ca493605/6.PNG)
+![image alt](https://github.com/nusrat463/MiniAccountManagementSystem/blob/528b9660d8b6815e552a2a711908ad2b48fd23d1/9.PNG)
 
-6.Accountant have been assigned add permission of Accounts.
+6.This is Charts of Accounts page with hierarchy tree and add,update,delete account features. Accountant have been assigned all features permission of Accounts.
 
 ![image alt](https://github.com/nusrat463/MiniAccountManagementSystem/blob/b116597fd286c39c230af5a5bf048d80ca493605/7.PNG)
+
+7.Voucher Entry page with Voucher Type Journal,Payment,Receipt and multi line debit credit entries.
+
+![image alt](https://github.com/nusrat463/MiniAccountManagementSystem/blob/528b9660d8b6815e552a2a711908ad2b48fd23d1/8.PNG)
 
 
 
