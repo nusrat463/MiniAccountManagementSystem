@@ -36,6 +36,7 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
 
         public async Task<IActionResult> OnGetAsync()
         {
+            LoadDropdowns();
             var user = await _userManager.GetUserAsync(User);
             var roleName = (await _userManager.GetRolesAsync(user)).FirstOrDefault();
 
@@ -51,8 +52,9 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
             }
 
             var roleId = role.Id;
+            int moduleId = 3;
 
-            var access = _dbHelper.GetModuleAccess(roleId, "Chart of Accounts"); // Implement this method
+            var access = _dbHelper.GetModuleAccess(roleId, 3); // Implement this method
 
             if (access == null || !access.CanView)
             {
@@ -69,7 +71,6 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
         private void LoadDropdowns()
         {
             Accounts = _dbHelper.GetChartOfAccounts();
-            LoadDropdowns();
             ParentAccounts = _dbHelper.GetIdNameList("sp_GetParentAccount")
                 .Select(r => new SelectListItem { Value = r.Id, Text = r.Name }).ToList();
 

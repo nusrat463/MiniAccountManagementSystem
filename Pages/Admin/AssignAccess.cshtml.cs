@@ -45,7 +45,7 @@ public class AssignAccessModel : PageModel
             ViewData["Message"] = "Access assigned successfully.";
         }
 
-        return Page();
+        return RedirectToPage();
     }
 
 

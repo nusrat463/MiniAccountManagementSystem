@@ -51,7 +51,7 @@ namespace MiniAccountManagementSystem.Data
             }
         }
 
-        public RoleModuleAccess GetModuleAccess(string RoleId, string moduleName)
+        public RoleModuleAccess GetModuleAccess(string RoleId, int moduleId)
         {
             RoleModuleAccess access = null;
 
@@ -60,7 +60,7 @@ namespace MiniAccountManagementSystem.Data
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@RoleId", RoleId);
-                cmd.Parameters.AddWithValue("@ModuleName", moduleName);
+                cmd.Parameters.AddWithValue("@ModuleId", moduleId);
 
                 conn.Open();
                 using (var reader = cmd.ExecuteReader())
@@ -69,7 +69,7 @@ namespace MiniAccountManagementSystem.Data
                     {
                         access = new RoleModuleAccess
                         {
-                            ModuleName = reader["ModuleName"].ToString(),
+                            ModuleId = Convert.ToInt32(reader["ModuleName"]),
                             CanView = Convert.ToBoolean(reader["CanView"]),
                             CanEdit = Convert.ToBoolean(reader["CanEdit"])
                         };
