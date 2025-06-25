@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MiniAccountManagementSystem.Pages.Shared
+namespace MiniAccountManagementSystem.Pages.Accountant
 {
     public class _AccountNodeModel : PageModel
     {

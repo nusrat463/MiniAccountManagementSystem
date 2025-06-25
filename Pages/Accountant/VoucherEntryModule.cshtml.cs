@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
-namespace MiniAccountManagementSystem.Pages.VoucherEntry
+namespace MiniAccountManagementSystem.Pages.Accountant
 {
     public class VoucherEntryModuleModel : PageModel
     {
@@ -50,7 +50,7 @@ namespace MiniAccountManagementSystem.Pages.VoucherEntry
             {
                 // Log ex.Message or add ModelState error
                 ModelState.AddModelError("", "Failed to save voucher: " + ex.Message);
-                
+
             }
 
         }

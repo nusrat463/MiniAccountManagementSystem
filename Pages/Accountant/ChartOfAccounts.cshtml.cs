@@ -8,7 +8,7 @@ using System.Data;
 using System.Reflection;
 
 
-namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
+namespace MiniAccountManagementSystem.Pages.Accountant
 {
     public class ChartOfAccountsModel : PageModel
     {

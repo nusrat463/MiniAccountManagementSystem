@@ -22,12 +22,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Admin/AssignAccess.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQXNzaWduQWNjZXNzLmNzaHRtbA==
+[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Accountant/ChartOfAccounts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudGFudFxDaGFydE9mQWNjb3VudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/ChartOfAccounts/ChartOfAccounts.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnRPZkFjY291bnRzXENoYXJ0T2ZBY2NvdW50cy5jc2h0bWw=
+[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Accountant/VoucherEntryModule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudGFudFxWb3VjaGVyRW50cnlNb2R1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Accountant/_AccountNode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudGFudFxfQWNjb3VudE5vZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Admin/AssignAccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQXNzaWduQWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Error.cshtml]
@@ -42,20 +50,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Shared/_AccountNode.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BY2NvdW50Tm9kZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/VoucherEntry/VoucherEntryModule.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVm91Y2hlckVudHJ5XFZvdWNoZXJFbnRyeU1vZHVsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nusrat.mim/source/repos/MiniAccountManagementSystem/Pages/_ViewImports.cshtml]
