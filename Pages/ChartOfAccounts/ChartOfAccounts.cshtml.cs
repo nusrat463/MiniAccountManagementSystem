@@ -27,7 +27,7 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
         }
 
         public List<Account> Accounts { get; set; }
-
+        public Account SelectedAccount { get; set; }
         [BindProperty] public int? EditingId { get; set; }
         [BindProperty] public string AccountName { get; set; }
         [BindProperty] public int? ParentAccountID { get; set; }
@@ -36,7 +36,7 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
 
         public async Task<IActionResult> OnGetAsync()
         {
-            LoadDropdowns();
+            
             var user = await _userManager.GetUserAsync(User);
             var roleName = (await _userManager.GetRolesAsync(user)).FirstOrDefault();
 
@@ -54,17 +54,18 @@ namespace MiniAccountManagementSystem.Pages.ChartOfAccounts
             var roleId = role.Id;
             int moduleId = 3;
 
-            var access = _dbHelper.GetModuleAccess(roleId, 3); // Implement this method
+            var access = _dbHelper.GetModuleAccess(roleId, 3);
 
             if (access == null || !access.CanView)
             {
-                return Forbid(); // Or redirect to an error page
+                return Forbid(); //redirect to an error page
             }
 
             CanView = access.CanView;
             CanEdit = access.CanEdit;
 
-            // Load page data here if allowed
+            LoadDropdowns();
+
             return Page();
         }
 

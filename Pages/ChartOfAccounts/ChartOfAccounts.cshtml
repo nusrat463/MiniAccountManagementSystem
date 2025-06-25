@@ -2,9 +2,7 @@
 @model ChartOfAccountsModel
 @using Microsoft.AspNetCore.Html
 @using MiniAccountManagementSystem.Entity
-@{
-    ViewData["Title"] = "Chart of Accounts";
-}
+
 
 <h2>Chart of Accounts</h2>
 @if (TempData["Message"] != null)
@@ -14,26 +12,18 @@
 
 @if (Model.CanView)
 {
-    <!-- Display table or read-only data -->
-    <table class="table">
-        <thead><tr><th>Account</th><th>Type</th></tr></thead>
-        <tbody>
-            <h4>Account Tree</h4>
-
-            <ul>
-                @foreach (var acc in Model.Accounts.Where(a => a.ParentAccountID == null))
-                {
-                    @await Html.PartialAsync("_AccountNode", acc, new ViewDataDictionary(ViewData)
-       {
-           ["AllAccounts"] = Model.Accounts
-       })
-                }
-        </tbody>
-    </table>
+    @foreach (var acc in Model.Accounts.Where(a => a.ParentAccountID == null))
+    {
+        @await Html.PartialAsync("_AccountNode", acc, new ViewDataDictionary(ViewData)
+               {
+                   ["AllAccounts"] = Model.Accounts
+               })
+    }
+}
 
     @if (Model.CanEdit)
     {
-        <a class="btn btn-primary" href="/ChartOfAccounts/Add">Add New Account</a>
+    <h2>Add Account</h2>
         <form method="post" asp-page-handler="Add">
             <div class="form-group">
                 <label asp-for="AccountType">Account Name</label>
@@ -60,8 +50,4 @@
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
     }
-}
-else
-{
-    <p>You do not have permission to view this page.</p>
-}
+

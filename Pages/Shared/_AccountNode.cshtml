@@ -2,6 +2,9 @@
 @model MiniAccountManagementSystem.Entity.Account
 @{
     var allAccounts = ViewData["AllAccounts"] as List<Account>;
+    var parentName = Model.ParentAccountID.HasValue
+        ? allAccounts?.FirstOrDefault(a => a.AccountID == Model.ParentAccountID)?.AccountName ?? "None"
+        : "None";
 }
 
 <li>
@@ -15,7 +18,7 @@
         <input type="hidden" name="EditingId" value="@Model.AccountID" />
         <input name="AccountName" value="@Model.AccountName" class="form-control-sm" />
         <input name="AccountType" value="@Model.AccountType" class="form-control-sm" />
-        <input name="ParentAccountID" value="@Model.ParentAccountID ?? 0" class="form-control-sm" />
+        <input name="ParentAccountName" value="@parentName" readonly class="form-control-sm" />
         <button class="btn btn-sm btn-secondary">Update</button>
     </form>
 
